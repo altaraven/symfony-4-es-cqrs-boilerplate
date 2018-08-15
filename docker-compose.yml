@@ -27,6 +27,8 @@ services:
     volumes:
       - .:/app
     command: ['/app/bin/console', 'rabbitmq:multiple-consumer', 'events']
+    depends_on:
+    - rmq
 
   mysql:
     image: mysql:5.7
